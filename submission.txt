@@ -1,0 +1,19 @@
+1. 
+When we initialize our socket, we specify the type with the `socket.SOCK_STREAM` argument which signifies a TCP socket.
+
+2. 
+A client socket is the one initializaing the connection, meanwhile the server socket is the one listening for the connection. In other words, the client makes the request and the server responds.
+
+3. 
+The `setsockopt` method allows us to configure socket options. When we specify the SO_REUSEADDR option to 1 (true), we instruct the OS to let us reust the same bind port.
+
+The full call in our code looks like: s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+
+4. 
+We get the IP address and port of incoming connections / clients.
+
+5. ;
+recv() returns an empty byte string when it is done sending the request.
+
+6.
+https://github.com/sruduke/cmput404-lab2
